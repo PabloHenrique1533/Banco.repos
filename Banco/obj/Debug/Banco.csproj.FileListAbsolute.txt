@@ -1,0 +1,14 @@
+C:\Users\Tecnico\source\repos\Banco\Banco\bin\Debug\Banco.exe.config
+C:\Users\Tecnico\source\repos\Banco\Banco\bin\Debug\Banco.exe
+C:\Users\Tecnico\source\repos\Banco\Banco\bin\Debug\Banco.pdb
+C:\Users\Tecnico\source\repos\Banco\Banco\obj\Debug\Banco.csproj.AssemblyReference.cache
+C:\Users\Tecnico\source\repos\Banco\Banco\obj\Debug\Banco.csproj.CoreCompileInputs.cache
+C:\Users\Tecnico\source\repos\Banco\Banco\obj\Debug\Banco.exe
+C:\Users\Tecnico\source\repos\Banco\Banco\obj\Debug\Banco.pdb
+C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\bin\Debug\Banco.exe.config
+C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\bin\Debug\Banco.exe
+C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\bin\Debug\Banco.pdb
+C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\obj\Debug\Banco.csproj.AssemblyReference.cache
+C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\obj\Debug\Banco.csproj.CoreCompileInputs.cache
+C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\obj\Debug\Banco.exe
+C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\obj\Debug\Banco.pdb
