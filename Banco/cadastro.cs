@@ -14,6 +14,7 @@ namespace Banco
         public bool[] prioritario = new bool[100];
         public string nomeCli;
         public int idCli;
+        public bool prioridade;
         public int idadeCli;
         public int proximaPosicao = 0;
        
@@ -31,11 +32,19 @@ namespace Banco
 
                 Console.WriteLine("O Paciente é Proprietario: S/N:");
                 char resposta = Console.ReadLine().ToUpper()[0];
-                bool proprietarioCli = (resposta == 'S'); 
 
-                this.nome[proximaPosicao] = nomeCli;
-                this.idade[proximaPosicao] =idadeCli;
-                this.id[proximaPosicao] = idCli;
+                if(resposta == 'S')
+                 {
+                  prioridade = true;
+                 }else
+                 {
+                     prioridade = false;
+                 }
+
+                    this.nome[proximaPosicao] = nomeCli;
+                    this.idade[proximaPosicao] =idadeCli;
+                    this.id[proximaPosicao] = idCli;
+                    this.prioritario[proximaPosicao] = prioridade;
 
 
 
@@ -69,7 +78,7 @@ namespace Banco
 
         public void cliPrioritarios()
         {
-            bool prioritarioFalse = false;
+            bool prioridade = false;
             Console.WriteLine("\n Prioritarios na Fila:");
             for (int i = 0; i < proximaPosicao; i++)
             {
@@ -77,7 +86,7 @@ namespace Banco
                 {
                     Console.WriteLine($"{i + 1}.{nome[i]}, ID: {id[i]}, Idade: {idade[i]} - Prioritário");
                 }
-                else if (prioritarioFalse)
+                else if (prioridade)
                 {
                     Console.WriteLine("A Fila Está Vazia!");
                     return;
