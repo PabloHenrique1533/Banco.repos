@@ -12,3 +12,10 @@ C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\obj\Debug\Banco.csproj.Assembl
 C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\obj\Debug\Banco.csproj.CoreCompileInputs.cache
 C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\obj\Debug\Banco.exe
 C:\Users\Tecnico\Downloads\Banco.repo\Banco\Banco\obj\Debug\Banco.pdb
+C:\Users\DATEN\Desktop\Banco.repos\Banco\obj\Debug\Banco.exe
+C:\Users\DATEN\Desktop\Banco.repos\Banco\obj\Debug\Banco.pdb
+C:\Users\DATEN\Desktop\Banco.repos\Banco\bin\Debug\Banco.exe.config
+C:\Users\DATEN\Desktop\Banco.repos\Banco\bin\Debug\Banco.exe
+C:\Users\DATEN\Desktop\Banco.repos\Banco\bin\Debug\Banco.pdb
+C:\Users\DATEN\Desktop\Banco.repos\Banco\obj\Debug\Banco.csproj.AssemblyReference.cache
+C:\Users\DATEN\Desktop\Banco.repos\Banco\obj\Debug\Banco.csproj.CoreCompileInputs.cache

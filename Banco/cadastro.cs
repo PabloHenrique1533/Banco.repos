@@ -11,26 +11,30 @@ namespace Banco
         public string[] nome = new string[10] ;
         public int[] id = new int[10];
         public int[] idade = new int[10];
+        public bool[] prioritario = new bool[100];
         public string nomeCli;
         public int idCli;
         public int idadeCli;
         public int proximaPosicao = 0;
-        public int proximaPosicao2 = 0;
+       
         
         public void cdClientes()
         {
             
             
-                Console.WriteLine("Digite o Nome Do Cliente:");
-                nomeCli = Console.ReadLine();
+                Console.WriteLine("\nDigite o Nome Do Cliente:");
+                nomeCli = Console.ReadLine().ToUpper();
                 Console.WriteLine("Digite a Idade Do Cliente");
-                idadeCli = int.Parse(Console.ReadLine());
+                idadeCli = int.Parse(Console.ReadLine().ToUpper());
                 Console.WriteLine("De Um ID Para O Cliente");
-                idCli = int.Parse(Console.ReadLine());
+                idCli = int.Parse(Console.ReadLine().ToUpper());
 
+                Console.WriteLine("O Paciente é Proprietario: S/N:");
+                char resposta = Console.ReadLine().ToUpper()[0];
+                bool proprietarioCli = (resposta == 'S'); 
 
                 this.nome[proximaPosicao] = nomeCli;
-                this.idade[proximaPosicao] =idCli;
+                this.idade[proximaPosicao] =idadeCli;
                 this.id[proximaPosicao] = idCli;
 
 
@@ -43,45 +47,44 @@ namespace Banco
              
                 proximaPosicao++;
         }
-        public void inserirClientes()
-        {
-
-            Console.WriteLine("Aperte 2 Para Inserir Os Cliente Cadastrado Na Fila :");
-            if(proximaPosicao2 >= 10)
-            {
-                Console.WriteLine("Nao ha Mais Espaço Para Clientes!!");
-                return;
-            }
-
-            this.nome[proximaPosicao] = this.nomeCli;
-            this.idade[proximaPosicao] = this.idadeCli;
-            this.id[proximaPosicao] = this.idCli;
-
-            proximaPosicao2++;
-            
-        }
+      
 
         public void cliFilas()
         {
+            
             if(proximaPosicao == 0)
             {
-                Console.WriteLine("A Fila está vazia");
+                Console.WriteLine("\nA Fila está vazia");
                 return;
             }
             else
             {
-                Console.WriteLine("Clientes na fila:");
+                Console.WriteLine("\nClientes na fila:");
                 for (int i = 0; i < proximaPosicao; i++)
                 {
-                    Console.WriteLine($"{i + 1}.{nome[i]}, ID: {id[i]}, Idade: {idade}");
+                    Console.WriteLine($"{i + 1}.{nome[i]}, ID: {id[i]}, Idade: {idade[i]}, Prioritario: {prioritario[i]}    ");
                 }
             }
         }
 
         public void cliPrioritarios()
         {
-            
-          
+            bool prioritarioFalse = false;
+            Console.WriteLine("\n Prioritarios na Fila:");
+            for (int i = 0; i < proximaPosicao; i++)
+            {
+                if (prioritario[i])
+                {
+                    Console.WriteLine($"{i + 1}.{nome[i]}, ID: {id[i]}, Idade: {idade[i]} - Prioritário");
+                }
+                else if (prioritarioFalse)
+                {
+                    Console.WriteLine("A Fila Está Vazia!");
+                    return;
+                }
+            }
+
+
         }
     }
 }

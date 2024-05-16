@@ -11,18 +11,17 @@ namespace Banco
         static void Main(string[] args)
         {
             Console.WriteLine("Bem Vindo ao Banco do Jef! \n " +
-                "Escolha Oque Você Deseja Fazer com as Opções Abaixo:");
+                "\nEscolha Oque Você Deseja Fazer com as Opções Abaixo:");
 
            
             cadastro id1 = new cadastro();
             char opcao ='0'; 
             while(opcao != 'q')
             {
-                Console.WriteLine("1. Cadastrar Clientes \n" +
-                   "2. Inserir Clientes Na Fila \n" +
-                   "3. Mostra Clientes Na Fila Atuais \n" +
-                   "4. Clientes Prioritarios \n" +
-                   "5. Atender Clientes(retirar clientes da fila) \n" +
+                Console.WriteLine("\n1. Cadastrar Clientes/Inserir Clientes Na Fila \n" +
+                   "2.Mostra Clientes Na Fila Atuais  \n" +
+                   "3.Clientes Prioritarios  \n" +
+                   "4.Atender Clientes(retirar clientes da fila)  \n" +
                    "q. Para Sair Do Sistema!");
 
                 opcao = Console.ReadKey().KeyChar;
@@ -34,11 +33,11 @@ namespace Banco
                     break;
 
                     case '2':
-                        id1.inserirClientes();
+                        id1.cliFilas();
                     break;
 
                     case '3':
-                        id1.cliFilas();
+                        id1.cliPrioritarios();
                     break;
                 }
                 
