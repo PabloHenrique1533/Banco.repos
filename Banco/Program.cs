@@ -39,6 +39,10 @@ namespace Banco
                     case '3':
                         id1.cliPrioritarios();
                     break;
+
+                    case '4':
+                        id1.atendeEremoverCli();
+                    break;
                 }
                 
             }

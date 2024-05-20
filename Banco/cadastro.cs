@@ -15,6 +15,7 @@ namespace Banco
         public string nomeCli;
         public int idCli;
         public bool prioridade;
+        public int QTDprioridade;
         public int idadeCli;
         public int proximaPosicao = 0;
        
@@ -36,15 +37,17 @@ namespace Banco
                 if(resposta == 'S')
                  {
                   prioridade = true;
+
                  }else
                  {
                      prioridade = false;
-                 }
+            }
 
-                    this.nome[proximaPosicao] = nomeCli;
-                    this.idade[proximaPosicao] =idadeCli;
-                    this.id[proximaPosicao] = idCli;
-                    this.prioritario[proximaPosicao] = prioridade;
+                this.nome[proximaPosicao] = nomeCli;
+                this.idade[proximaPosicao] = idadeCli;
+                this.id[proximaPosicao] = idCli;
+                this.prioritario[proximaPosicao] = prioridade;
+         
 
 
 
@@ -78,22 +81,79 @@ namespace Banco
 
         public void cliPrioritarios()
         {
-            bool prioridade = false;
-            Console.WriteLine("\n Prioritarios na Fila:");
-            for (int i = 0; i < proximaPosicao; i++)
+            if (prioridade == true)
             {
-                if (prioritario[i])
+
+                Console.WriteLine("\n Prioritarios na Fila:");
+                for (int i = 0; i < proximaPosicao; i++)
                 {
-                    Console.WriteLine($"{i + 1}.{nome[i]}, ID: {id[i]}, Idade: {idade[i]} - Prioritário");
-                }
-                else if (prioridade)
-                {
-                    Console.WriteLine("A Fila Está Vazia!");
-                    return;
+                    if (prioritario[i])
+                    {
+                        Console.WriteLine($"{i + 1}.{nome[i]}, ID: {id[i]}, Idade: {idade[i]} - Prioritário");
+                    }
                 }
             }
+            else
+            {
+                Console.WriteLine("\nNao ha nenhum prioritario na fila.");
+            }
+        }
+        public void atendeEremoverCli()
+        {
+               
+                    if(proximaPosicao > 0)
+                    {
+                        bool cliPrioEncontrado = false;
+                        int indiceCliePrio = -1;
+                        for (int i = 0; i < proximaPosicao; i++)
+                        {
+                            if (prioritario[i])
+                            {
+                                indiceCliePrio = i;
+                                cliPrioEncontrado |= true;
+                                break;
+                            }
+                            }
+                    if (cliPrioEncontrado)
+                    {
+                        string pessoaAtendida = nome[indiceCliePrio];
+                        for (int j = indiceCliePrio + 1; j < proximaPosicao; j++)
+                        {
+                            nome[j - 1] = nome[j];
+                            idade[j - 1] = idade[j];
+                            id[j - 1] = id[j];
+                        }
+                        nome[proximaPosicao - 1] = null;
+                        idade[proximaPosicao - 1] = 0;
+                        id[proximaPosicao - 1] = 0;
+                        proximaPosicao--;
 
+                        Console.WriteLine($"\n Cliente {pessoaAtendida} Foi Removido Da Fila!");
+                    }
+                    else
+                    {
+                     string pessoaAtendida = nome[0];
 
+                        for (int j = 1; j < proximaPosicao; j++)
+                        {
+                            nome[j - 1] = nome[j];
+                            idade[j - 1] = idade[j];
+                            id[j - 1] = id[j];
+                        }
+
+                        nome[proximaPosicao - 1] = null;
+                        idade[proximaPosicao - 1] = 0;
+                        id[proximaPosicao - 1] = 0;
+                        proximaPosicao--;
+                        Console.WriteLine($"\n Cliente {pessoaAtendida} Foi Removido Da Fila!");
+                    }                 
+                }
+            else
+            {
+                Console.WriteLine("\nNao tem ngm pra atender");
+            }
+                
+       
         }
     }
 }
